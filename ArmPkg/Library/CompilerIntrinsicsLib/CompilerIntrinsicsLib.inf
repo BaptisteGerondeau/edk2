@@ -18,8 +18,8 @@
   LIBRARY_CLASS                  = CompilerIntrinsicsLib
 
 [Sources]
-  memcpy.c             | RVCT
-  memset.c             | RVCT
+  memcpy.c             | MSFT
+  memset.c             | MSFT
 
   memcpy.c             | GCC
   memset.c             | GCC
@@ -30,17 +30,17 @@
   memmove_ms.c         | MSFT
 
 [Sources.ARM]
-  Arm/mullu.asm        | RVCT
-  Arm/switch.asm       | RVCT
-  Arm/llsr.asm         | RVCT
-  Arm/memmove.asm      | RVCT
-  Arm/uread.asm        | RVCT
-  Arm/uwrite.asm       | RVCT
-  Arm/lasr.asm         | RVCT
-  Arm/llsl.asm         | RVCT
-  Arm/div.asm          | RVCT
-  Arm/uldiv.asm        | RVCT
-  Arm/ldivmod.asm      | RVCT
+  Arm/mullu.asm        | MSFT
+  Arm/switch.asm       | MSFT
+  Arm/llsr.asm         | MSFT
+  Arm/memmove.asm      | MSFT
+  Arm/uread.asm        | MSFT
+  Arm/uwrite.asm       | MSFT
+  Arm/lasr.asm         | MSFT
+  Arm/llsl.asm         | MSFT
+  Arm/div.asm          | MSFT
+  Arm/uldiv.asm        | MSFT
+  Arm/ldivmod.asm      | MSFT
 
   Arm/ashrdi3.S        | GCC
   Arm/ashldi3.S        | GCC

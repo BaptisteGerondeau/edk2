@@ -239,7 +239,9 @@
 !endif
 
 [LibraryClasses.ARM]
+!if $(SOFTFLOAT_ENABLE) == TRUE
   ArmSoftFloatLib|ArmPkg/Library/ArmSoftFloatLib/ArmSoftFloatLib.inf
+!endif
 
 [BuildOptions]
   RVCT:RELEASE_*_*_CC_FLAGS  = -DMDEPKG_NDEBUG

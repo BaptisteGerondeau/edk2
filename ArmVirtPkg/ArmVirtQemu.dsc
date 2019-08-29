@@ -43,6 +43,10 @@
   !error "NETWORK_SNP_ENABLE is IA32/X64/EBC only"
 !endif
 
+!if $(ARCH) == ARM
+  DEFINE SOFTFLOAT_ENABLE						= TRUE
+!endif
+
 !include NetworkPkg/NetworkDefines.dsc.inc
 
 !include ArmVirtPkg/ArmVirt.dsc.inc

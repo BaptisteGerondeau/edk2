@@ -95,7 +95,9 @@
   PlatformFlashAccessLib|SignedCapsulePkg/Library/PlatformFlashAccessLibNull/PlatformFlashAccessLibNull.inf
 
 [LibraryClasses.ARM]
+!if $(SOFTFLOAT_ENABLE) == TRUE
   ArmSoftFloatLib|ArmPkg/Library/ArmSoftFloatLib/ArmSoftFloatLib.inf
+!endif
 
 [LibraryClasses.AARCH64, LibraryClasses.ARM]
   #

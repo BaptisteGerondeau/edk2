@@ -133,7 +133,9 @@
   ArmPkg/Library/ArmGicArchLib/ArmGicArchLib.inf
   ArmPkg/Library/ArmGicArchSecLib/ArmGicArchSecLib.inf
   ArmPkg/Library/ArmLib/ArmBaseLib.inf
-  ArmPkg/Library/ArmSoftFloatLib/ArmSoftFloatLib.inf
+!if $(SOFTFLOAT_ENABLE) == TRUE
+  ArmSoftFloatLib|ArmPkg/Library/ArmSoftFloatLib/ArmSoftFloatLib.inf
+!endif
   ArmPkg/Library/PeiServicesTablePointerLib/PeiServicesTablePointerLib.inf
   ArmPkg/Library/PlatformBootManagerLib/PlatformBootManagerLib.inf
 

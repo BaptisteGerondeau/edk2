@@ -102,6 +102,9 @@
   #       since libssl is not required for iSCSI.
   #
   DEFINE NETWORK_ISCSI_ENABLE = TRUE
+  !if $(SOFTFLOAT_ENABLE) == FALSE
+    DEFINE NETWORK_ISCSI_ENABLE = FALSE
+  !endif
 !endif
 
 !if $(NETWORK_ENABLE) == TRUE

@@ -67,7 +67,11 @@
   #
   NULL|ArmPkg/Library/CompilerIntrinsicsLib/CompilerIntrinsicsLib.inf
   NULL|MdePkg/Library/BaseStackCheckLib/BaseStackCheckLib.inf
+
+[LibraryClasses.ARM]
+!if $(SOFTFLOAT_ENABLE) == TRUE
   ArmSoftFloatLib|ArmPkg/Library/ArmSoftFloatLib/ArmSoftFloatLib.inf
+!endif
 
 [PcdsFeatureFlag]
   gEfiMdePkgTokenSpaceGuid.PcdComponentName2Disable|TRUE

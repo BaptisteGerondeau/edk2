@@ -79,3 +79,7 @@
   gEfiPciRootBridgeIoProtocolGuid
   gEfiSimpleFileSystemProtocolGuid
   gVirtioDeviceProtocolGuid
+
+[BuildOptions]
+  MSFT:*_*_*_CC_FLAGS = /wd4132
+  MSFT:*_*_*_CC_FLAGS = /wd4366

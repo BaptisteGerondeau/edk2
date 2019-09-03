@@ -33,3 +33,6 @@
   PrintLib
   DebugLib
   PeCoffGetEntryPointLib
+
+[BuildOptions]
+  MSFT:*_*_*_CC_FLAGS = /wd4146

@@ -41,3 +41,6 @@
 
 [Guids]
   gEfiDebugImageInfoTableGuid
+
+[BuildOptions]
+  MSFT:*_*_*_CC_FLAGS = /wd4456

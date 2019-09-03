@@ -215,7 +215,7 @@ GetImageContext (
 
   Status =  PeCoffLoaderGetImageInfo (ImageContext);
   if (!EFI_ERROR(Status) && ((VOID*)(UINTN)ImageContext->DebugDirectoryEntryRva != NULL)) {
-    ImageAddress = ImageContext->ImageAddress;
+    ImageAddress = (UINTN) ImageContext->ImageAddress;
     if (ImageContext->IsTeImage) {
       ImageAddress += sizeof (EFI_TE_IMAGE_HEADER) - ((EFI_TE_IMAGE_HEADER*)EfiImage)->StrippedSize;
     }

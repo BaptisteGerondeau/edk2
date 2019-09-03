@@ -894,7 +894,7 @@ int fdt_overlay_apply(void *fdt, void *fdto)
 	/*
 	 * The overlay has been damaged, erase its magic.
 	 */
-	fdt_set_magic(fdto, ~0);
+	fdt_set_magic(fdto, (uint32_t) ~0);
 
 	return 0;
 
@@ -902,13 +902,13 @@ err:
 	/*
 	 * The overlay might have been damaged, erase its magic.
 	 */
-	fdt_set_magic(fdto, ~0);
+	fdt_set_magic(fdto, (uint32_t) ~0);
 
 	/*
 	 * The base device tree might have been damaged, erase its
 	 * magic.
 	 */
-	fdt_set_magic(fdt, ~0);
+	fdt_set_magic(fdt, (uint32_t) ~0);
 
 	return ret;
 }

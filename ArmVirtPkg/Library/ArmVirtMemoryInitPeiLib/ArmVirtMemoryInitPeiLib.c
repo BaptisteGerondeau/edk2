@@ -98,7 +98,7 @@ MemoryPeim (
   // that the contents we put there with the caches and MMU off will still
   // be visible after turning them on.
   //
-  InvalidateDataCacheRange ((VOID*)(UINTN)UefiMemoryBase, UefiMemorySize);
+  InvalidateDataCacheRange ((VOID*)(UINTN)UefiMemoryBase, (UINTN) UefiMemorySize);
 
   // Build Memory Allocation Hob
   InitMmu ();

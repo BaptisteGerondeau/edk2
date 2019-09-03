@@ -56,3 +56,6 @@
 [Pcd]
   gArmTokenSpaceGuid.PcdDebuggerExceptionSupport
   gArmTokenSpaceGuid.PcdCpuVectorBaseAddress
+
+[BuildOptions]
+  MSFT:*_*_*_CC_FLAGS = /wd4018

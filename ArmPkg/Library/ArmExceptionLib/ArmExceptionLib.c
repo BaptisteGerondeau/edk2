@@ -97,7 +97,7 @@ InitializeCpuExceptionHandlers(
   // if we are requested to copy exception handlers to another location
   if (gArmRelocateVectorTable) {
 
-    VectorBase = PcdGet64(PcdCpuVectorBaseAddress);
+    VectorBase = (UINTN) PcdGet64(PcdCpuVectorBaseAddress);
     Status = CopyExceptionHandlers(VectorBase);
 
   }

@@ -1192,7 +1192,7 @@ NorFlashDiskIoWriteDisk (
   // us up to a block boundary, whichever is less.
   // (DiskOffset | (BlockSize - 1)) + 1) rounds DiskOffset up to the next
   // block boundary (even if it is already on one).
-  WriteSize = MIN (RemainingBytes, ((DiskOffset | (BlockSize - 1)) + 1) - DiskOffset);
+  WriteSize = (UINTN) MIN (RemainingBytes, ((DiskOffset | (BlockSize - 1)) + 1) - DiskOffset);
 
   do {
     if (WriteSize == BlockSize) {

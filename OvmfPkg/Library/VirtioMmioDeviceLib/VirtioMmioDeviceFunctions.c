@@ -27,7 +27,7 @@ VirtioMmioGetDeviceFeatures (
 
   Device = VIRTIO_MMIO_DEVICE_FROM_VIRTIO_DEVICE (This);
 
-  *DeviceFeatures = VIRTIO_CFG_READ (Device, VIRTIO_MMIO_OFFSET_HOST_FEATURES);
+  *DeviceFeatures = VIRTIO_CFG_READ ((UINTN) Device, VIRTIO_MMIO_OFFSET_HOST_FEATURES);
 
   return EFI_SUCCESS;
 }
@@ -47,7 +47,7 @@ VirtioMmioGetQueueSize (
 
   Device = VIRTIO_MMIO_DEVICE_FROM_VIRTIO_DEVICE (This);
 
-  *QueueNumMax = VIRTIO_CFG_READ (Device, VIRTIO_MMIO_OFFSET_QUEUE_NUM_MAX) & 0xFFFF;
+  *QueueNumMax = VIRTIO_CFG_READ ((UINTN) Device, VIRTIO_MMIO_OFFSET_QUEUE_NUM_MAX) & 0xFFFF;
 
   return EFI_SUCCESS;
 }
@@ -67,7 +67,7 @@ VirtioMmioGetDeviceStatus (
 
   Device = VIRTIO_MMIO_DEVICE_FROM_VIRTIO_DEVICE (This);
 
-  *DeviceStatus = VIRTIO_CFG_READ (Device, VIRTIO_MMIO_OFFSET_STATUS) & 0xFF;
+  *DeviceStatus = VIRTIO_CFG_READ ((UINTN) Device, VIRTIO_MMIO_OFFSET_STATUS) & 0xFF;
 
   return EFI_SUCCESS;
 }
@@ -83,7 +83,7 @@ VirtioMmioSetQueueSize (
 
   Device = VIRTIO_MMIO_DEVICE_FROM_VIRTIO_DEVICE (This);
 
-  VIRTIO_CFG_WRITE (Device, VIRTIO_MMIO_OFFSET_QUEUE_NUM, QueueSize);
+  VIRTIO_CFG_WRITE ((UINTN) Device, VIRTIO_MMIO_OFFSET_QUEUE_NUM, QueueSize);
 
   return EFI_SUCCESS;
 }
@@ -99,7 +99,7 @@ VirtioMmioSetDeviceStatus (
 
   Device = VIRTIO_MMIO_DEVICE_FROM_VIRTIO_DEVICE (This);
 
-  VIRTIO_CFG_WRITE (Device, VIRTIO_MMIO_OFFSET_STATUS, DeviceStatus);
+  VIRTIO_CFG_WRITE ((UINTN) Device, VIRTIO_MMIO_OFFSET_STATUS, DeviceStatus);
 
   return EFI_SUCCESS;
 }
@@ -115,7 +115,7 @@ VirtioMmioSetQueueNotify (
 
   Device = VIRTIO_MMIO_DEVICE_FROM_VIRTIO_DEVICE (This);
 
-  VIRTIO_CFG_WRITE (Device, VIRTIO_MMIO_OFFSET_QUEUE_NOTIFY, QueueNotify);
+  VIRTIO_CFG_WRITE ((UINTN) Device, VIRTIO_MMIO_OFFSET_QUEUE_NOTIFY, QueueNotify);
 
   return EFI_SUCCESS;
 }
@@ -131,7 +131,7 @@ VirtioMmioSetQueueAlignment (
 
   Device = VIRTIO_MMIO_DEVICE_FROM_VIRTIO_DEVICE (This);
 
-  VIRTIO_CFG_WRITE (Device, VIRTIO_MMIO_OFFSET_QUEUE_ALIGN, Alignment);
+  VIRTIO_CFG_WRITE ((UINTN) Device, VIRTIO_MMIO_OFFSET_QUEUE_ALIGN, Alignment);
 
   return EFI_SUCCESS;
 }
@@ -151,7 +151,7 @@ VirtioMmioSetPageSize (
 
   Device = VIRTIO_MMIO_DEVICE_FROM_VIRTIO_DEVICE (This);
 
-  VIRTIO_CFG_WRITE (Device, VIRTIO_MMIO_OFFSET_GUEST_PAGE_SIZE, PageSize);
+  VIRTIO_CFG_WRITE ((UINTN) Device, VIRTIO_MMIO_OFFSET_GUEST_PAGE_SIZE, PageSize);
 
   return EFI_SUCCESS;
 }
@@ -167,7 +167,7 @@ VirtioMmioSetQueueSel (
 
   Device = VIRTIO_MMIO_DEVICE_FROM_VIRTIO_DEVICE (This);
 
-  VIRTIO_CFG_WRITE (Device, VIRTIO_MMIO_OFFSET_QUEUE_SEL, Sel);
+  VIRTIO_CFG_WRITE ((UINTN) Device, VIRTIO_MMIO_OFFSET_QUEUE_SEL, Sel);
 
   return EFI_SUCCESS;
 }
@@ -185,7 +185,7 @@ VirtioMmioSetQueueAddress (
 
   Device = VIRTIO_MMIO_DEVICE_FROM_VIRTIO_DEVICE (This);
 
-  VIRTIO_CFG_WRITE (Device, VIRTIO_MMIO_OFFSET_QUEUE_PFN,
+  VIRTIO_CFG_WRITE ((UINTN) Device, VIRTIO_MMIO_OFFSET_QUEUE_PFN,
     (UINT32)((UINTN)Ring->Base >> EFI_PAGE_SHIFT));
 
   return EFI_SUCCESS;
@@ -205,7 +205,7 @@ VirtioMmioSetGuestFeatures (
   if (Features > MAX_UINT32) {
     return EFI_UNSUPPORTED;
   }
-  VIRTIO_CFG_WRITE (Device, VIRTIO_MMIO_OFFSET_GUEST_FEATURES,
+  VIRTIO_CFG_WRITE ((UINTN) Device, VIRTIO_MMIO_OFFSET_GUEST_FEATURES,
     (UINT32)Features);
 
   return EFI_SUCCESS;
@@ -236,7 +236,7 @@ VirtioMmioDeviceWrite (
   //
   // Compute base address
   //
-  DstBaseAddress = Device->BaseAddress +
+  DstBaseAddress = (UINTN) Device->BaseAddress +
       VIRTIO_DEVICE_SPECIFIC_CONFIGURATION_OFFSET_MMIO + FieldOffset;
 
   //
@@ -279,7 +279,7 @@ VirtioMmioDeviceRead (
   //
   // Compute base address
   //
-  SrcBaseAddress = Device->BaseAddress +
+  SrcBaseAddress = (UINTN) Device->BaseAddress +
       VIRTIO_DEVICE_SPECIFIC_CONFIGURATION_OFFSET_MMIO + FieldOffset;
 
   //

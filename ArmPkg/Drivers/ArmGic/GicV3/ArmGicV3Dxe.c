@@ -383,8 +383,8 @@ GicV3DxeInitialize (
   // the system.
   ASSERT_PROTOCOL_ALREADY_INSTALLED (NULL, &gHardwareInterruptProtocolGuid);
 
-  mGicDistributorBase    = PcdGet64 (PcdGicDistributorBase);
-  mGicRedistributorsBase = PcdGet64 (PcdGicRedistributorsBase);
+  mGicDistributorBase    = (UINTN) PcdGet64 (PcdGicDistributorBase);
+  mGicRedistributorsBase = (UINTN) PcdGet64 (PcdGicRedistributorsBase);
   mGicNumInterrupts      = ArmGicGetMaxNumInterrupts (mGicDistributorBase);
 
   // We will be driving this GIC in native v3 mode, i.e., with Affinity
@@ -426,7 +426,7 @@ GicV3DxeInitialize (
       for (Index = 8; Index < (mGicNumInterrupts / 4); Index++) {
         MmioWrite32 (
           mGicDistributorBase + ARM_GIC_ICDIPTR + (Index * 4),
-          CpuTarget
+          (UINT32) CpuTarget
           );
       }
     }

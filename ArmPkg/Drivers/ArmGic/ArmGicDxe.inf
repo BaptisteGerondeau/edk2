@@ -55,3 +55,6 @@
 
 [Depex]
   TRUE
+
+[BuildOptions]
+  MSFT:*_*_*_CC_FLAGS = /wd4152

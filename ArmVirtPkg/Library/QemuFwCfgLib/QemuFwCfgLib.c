@@ -152,8 +152,8 @@ QemuFwCfgInitialize (
   ASSERT (FwCfgSelectorAddress <= MAX_UINTN - FwCfgSelectorSize + 1);
   ASSERT (FwCfgDataAddress     <= MAX_UINTN - FwCfgDataSize     + 1);
 
-  mFwCfgSelectorAddress = FwCfgSelectorAddress;
-  mFwCfgDataAddress     = FwCfgDataAddress;
+  mFwCfgSelectorAddress = (UINTN) FwCfgSelectorAddress;
+  mFwCfgDataAddress     = (UINTN) FwCfgDataAddress;
 
   DEBUG ((EFI_D_INFO, "Found FwCfg @ 0x%Lx/0x%Lx\n", FwCfgSelectorAddress,
     FwCfgDataAddress));
@@ -188,7 +188,7 @@ QemuFwCfgInitialize (
         QemuFwCfgSelectItem (QemuFwCfgItemInterfaceVersion);
         Features = QemuFwCfgRead32 ();
         if ((Features & FW_CFG_F_DMA) != 0) {
-          mFwCfgDmaAddress = FwCfgDmaAddress;
+          mFwCfgDmaAddress = (UINTN) FwCfgDmaAddress;
           InternalQemuFwCfgReadBytes = DmaReadBytes;
           InternalQemuFwCfgWriteBytes = DmaWriteBytes;
           InternalQemuFwCfgSkipBytes = DmaSkipBytes;

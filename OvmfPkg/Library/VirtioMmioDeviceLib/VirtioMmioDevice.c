@@ -69,17 +69,17 @@ VirtioMmioInit (
   Device->BaseAddress = BaseAddress;
   Device->VirtioDevice.Revision = VIRTIO_SPEC_REVISION (0, 9, 5);
   Device->VirtioDevice.SubSystemDeviceId =
-          MmioRead32 (BaseAddress + VIRTIO_MMIO_OFFSET_DEVICE_ID);
+          MmioRead32 ((UINTN) BaseAddress + VIRTIO_MMIO_OFFSET_DEVICE_ID);
 
   //
   // Double-check MMIO-specific values
   //
-  MagicValue = VIRTIO_CFG_READ (Device, VIRTIO_MMIO_OFFSET_MAGIC);
+  MagicValue = VIRTIO_CFG_READ ((UINTN) Device, VIRTIO_MMIO_OFFSET_MAGIC);
   if (MagicValue != VIRTIO_MMIO_MAGIC) {
     return EFI_UNSUPPORTED;
   }
 
-  Version = VIRTIO_CFG_READ (Device, VIRTIO_MMIO_OFFSET_VERSION);
+  Version = VIRTIO_CFG_READ ((UINTN) Device, VIRTIO_MMIO_OFFSET_VERSION);
   if (Version != 1) {
     return EFI_UNSUPPORTED;
   }
@@ -87,7 +87,7 @@ VirtioMmioInit (
   //
   // Double-check MMIO-specific values
   //
-  VendorId = VIRTIO_CFG_READ (Device, VIRTIO_MMIO_OFFSET_VENDOR_ID);
+  VendorId = VIRTIO_CFG_READ ((UINTN) Device, VIRTIO_MMIO_OFFSET_VENDOR_ID);
   if (VendorId != VIRTIO_VENDOR_ID) {
     //
     // The ARM Base and Foundation Models do not report a valid VirtIo VendorId.

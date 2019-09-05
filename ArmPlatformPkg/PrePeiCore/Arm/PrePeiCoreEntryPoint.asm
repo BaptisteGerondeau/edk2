@@ -54,7 +54,8 @@ _SetupSecondaryCoreStack
   mov32 r2, FixedPcdGet32(PcdCPUCoreSecondaryStackSize)
   mul   r0, r0, r2
   // SP = StackBase + StackOffset
-  add   sp, r6, r0
+  add   r8, r6, r0
+  push  r8
 
 _PrepareArguments
   // The PEI Core Entry Point has been computed by GenFV and stored in the second entry of the Reset Vector
@@ -78,9 +79,9 @@ _SetupPrimaryCoreStack
   mov   r10, r9
   mov   r11, r9
   mov   r12, r9
-0:stm   r8!, {r9-r12}
+  stm   r8!, {r9-r12}
   cmp   r8, r1
-  blt   0b
+  blt   0
   b     _PrepareArguments
 
 _NeverReturn

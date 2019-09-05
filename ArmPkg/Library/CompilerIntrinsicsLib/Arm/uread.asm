@@ -11,6 +11,8 @@
 
     INCLUDE AsmMacroExport.inc
 
+    AREA    CODE, ARM
+
 ;
 ;UINT32
 ;EFIAPI

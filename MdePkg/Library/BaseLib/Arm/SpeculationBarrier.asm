@@ -10,7 +10,8 @@
 
     EXPORT SpeculationBarrier
 
-    AREA MemoryBarriers, CODE, READONLY
+    AREA MemoryBarriers, READONLY
+    AREA CODE, ARM
 
 ;/**
 ;  Uses as a barrier to stop speculative execution.

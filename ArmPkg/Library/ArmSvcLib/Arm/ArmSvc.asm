@@ -8,6 +8,8 @@
 
     INCLUDE AsmMacroExport.inc
 
+    AREA    CODE, ARM
+
  RVCT_ASM_EXPORT ArmCallSvc
     // r0 will be popped just after the SVC call
     push     {r0, r4-r8}

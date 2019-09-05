@@ -10,7 +10,8 @@
 
     EXPORT EnableInterrupts
 
-    AREA Interrupt_enable, CODE, READONLY
+    AREA Interrupt_enable, READONLY
+    AREA CODE, ARM
 
 ;/**
 ;  Enables CPU interrupts.

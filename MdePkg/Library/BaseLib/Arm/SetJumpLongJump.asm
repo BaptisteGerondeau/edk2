@@ -9,7 +9,8 @@
   EXPORT  SetJump
   EXPORT  InternalLongJump
 
-  AREA  BaseLib, CODE, READONLY
+  AREA  BaseLib, READONLY
+  AREA  CODE, ARM
 
 ;/**
 ;  Saves the current CPU context that can be restored with a call to LongJump() and returns 0.;

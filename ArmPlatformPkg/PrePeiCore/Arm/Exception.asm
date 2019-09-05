@@ -11,7 +11,8 @@
   EXPORT  PeiVectorTable
 
   PRESERVE8
-  AREA    PrePeiCoreException, CODE, READONLY, CODEALIGN, ALIGN=5
+  AREA    PrePeiCoreException, READONLY, CODEALIGN, ALIGN=5
+  AREA    CODE, ARM
 
 //============================================================
 //Default Exception Handlers

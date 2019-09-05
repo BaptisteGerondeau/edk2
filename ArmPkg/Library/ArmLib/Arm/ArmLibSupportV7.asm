@@ -11,7 +11,7 @@
 
     INCLUDE AsmMacroExport.inc
 
-
+    AREA    CODE, ARM
 //------------------------------------------------------------------------------
 
  RVCT_ASM_EXPORT ArmIsMpCore

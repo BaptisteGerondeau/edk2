@@ -18,7 +18,8 @@
   IMPORT  _gPcd_FixedAtBuild_PcdArmPrimaryCoreMask
 
   PRESERVE8
-  AREA    ArmPlatformNullHelper, CODE, READONLY
+  AREA    ArmPlatformNullHelper, READONLY
+  AREA    CODE, ARM
 
 ArmPlatformPeiBootAction FUNCTION
   bx    lr

@@ -51,7 +51,7 @@
 
     EXPORT  InternalMemScanMem8
     AREA    ScanMem, CODE, READONLY
-    THUMB
+    AREA    THUMB
 
 InternalMemScanMem8
     ; r0 = start of memory to scan
@@ -122,7 +122,6 @@ L60 ; We're here because the fast path found a hit - now we have to track down e
     ; r0 points to the start of the double word after the one that was tested
     ; r5 has the 00/ff pattern for the first word, r6 has the chained value
     cmp     r5, #0
-    itte    eq
     moveq   r5, r6        ; the end is in the 2nd word
     subeq   r0, r0, #3    ; Points to 2nd byte of 2nd word
     subne   r0, r0, #7    ; or 2nd byte of 1st word
@@ -132,7 +131,6 @@ L60 ; We're here because the fast path found a hit - now we have to track down e
     bne     L61
     adds    r0, r0, #1
     tst     r5, #CHARTSTMASK(1)     ; 2nd character
-    ittt    eq
     addeq   r0, r0 ,#1
     tsteq   r5, #(3 << 15)          ; 2nd & 3rd character
     ; If not the 3rd must be the last one

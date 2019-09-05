@@ -9,7 +9,8 @@
 ;------------------------------------------------------------------------------
 
   EXPORT CpuPause
-  AREA cpu_pause, CODE, READONLY
+  AREA cpu_pause, READONLY
+  AREA CODE, ARM
 
 ;/**
 ;  Requests CPU to pause for a short period of time.

@@ -15,7 +15,8 @@
 ;------------------------------------------------------------------------------
 
   EXPORT CpuSleep
-  AREA cpu_sleep, CODE, READONLY
+  AREA cpu_sleep, READONLY
+  AREA CODE, ARM
 
 ;/**
 ;  Places the CPU in a sleep state until an interrupt is received.

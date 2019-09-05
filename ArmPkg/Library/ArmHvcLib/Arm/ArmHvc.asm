@@ -6,6 +6,7 @@
 //
 //
 
+    AREA    CODE, ARM
 
     INCLUDE AsmMacroExport.inc
 

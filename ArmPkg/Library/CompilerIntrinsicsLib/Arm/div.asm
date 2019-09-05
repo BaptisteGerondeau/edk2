@@ -15,7 +15,9 @@
     EXPORT  __rt_udiv
     EXPORT  __rt_sdiv
 
-    AREA  Math, CODE, READONLY
+    AREA  Math, READONLY
+
+    AREA    CODE, ARM
 
 ;
 ;UINT32

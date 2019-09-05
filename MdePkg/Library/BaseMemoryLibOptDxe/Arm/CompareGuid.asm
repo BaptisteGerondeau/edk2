@@ -40,7 +40,6 @@ InternalMemCompareGuid
     ldr     ip, [r1]
     ldr     lr, [r1, #4]
     cmp     r2, ip
-    it      eq
     cmpeq   r3, lr
     beq     L0
     movs    r0, #0
@@ -50,7 +49,6 @@ L0
     ldr     r2, [r1, #8]
     ldr     r3, [r1, #12]
     cmp     r4, r2
-    it      eq
     cmpeq   r0, r3
     bne     L2
     movs    r0, #1
@@ -63,7 +61,6 @@ L1
     orrs    r2, r2, r4
 
 L2
-    it      ne
     movne   r0, #0
     pop     {r4, pc}
 

@@ -131,7 +131,6 @@ L1
     ldrb    data1, [src1], #1
     ldrb    data2, [src2], #1
     subs    limit, limit, #1
-    it      cs
     cmpcs   data1, data2
     beq     L1
     sub     result, data1, data2

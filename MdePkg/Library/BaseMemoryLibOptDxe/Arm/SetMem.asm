@@ -74,7 +74,6 @@ L3
     blt     L4
     cmp     r4, #8                  ; between 8 and 15 bytes?
     str     r2, [lr, #-16]          ; overlapping store of 4 + (4 + 4) + 4 bytes
-    itt     gt
     strgt   r3, [lr, #-12]
     strgt   r2, [r1]
     str     r3, [r1, #4]
@@ -83,7 +82,6 @@ L3
 L4
     cmp     r4, #2                  ; 2 or 3 bytes?
     strb    r2, [lr, #-16]          ; store 1 byte
-    it      ge
     strhge  r2, [r1, #6]            ; store 2 bytes
     pop     {r4, pc}
 

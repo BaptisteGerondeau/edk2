@@ -62,7 +62,7 @@ GicGetDistributorIcfgBaseAndBit (
 
   RegIndex = Source / ARM_GIC_ICDICFR_F_STRIDE;  // NOTE: truncation is significant
   Field = Source % ARM_GIC_ICDICFR_F_STRIDE;
-  *RegAddress = PcdGet64 (PcdGicDistributorBase)
+  *RegAddress = (UINTN) PcdGet64 (PcdGicDistributorBase)
                 + ARM_GIC_ICDICFR
                 + (ARM_GIC_ICDICFR_BYTES * RegIndex);
   *Config1Bit = ((Field * ARM_GIC_ICDICFR_F_WIDTH)

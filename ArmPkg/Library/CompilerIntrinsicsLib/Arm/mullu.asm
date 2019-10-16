@@ -10,7 +10,8 @@
   EXPORT  __ARM_ll_mullu
   EXPORT  __aeabi_lmul
 
-  AREA  Math, CODE, READONLY
+  AREA  Math, READONLY
+  AREA    CODE, ARM
 
 ;
 ;INT64

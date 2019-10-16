@@ -11,6 +11,8 @@
     INCLUDE AsmMacroExport.inc
     PRESERVE8
 
+    AREA    CODE, ARM
+
 DC_ON           EQU     ( 0x1:SHL:2 )
 IC_ON           EQU     ( 0x1:SHL:12 )
 CTRL_M_BIT      EQU     (1 << 0)

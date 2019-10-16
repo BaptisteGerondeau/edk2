@@ -8,7 +8,8 @@
 
     EXPORT InternalSwitchStackAsm
 
-    AREA   Switch_Stack, CODE, READONLY
+    AREA   Switch_Stack, READONLY
+    AREA   CODE, ARM
 
 ;/**
 ;  This allows the caller to switch the stack and goes to the new entry point

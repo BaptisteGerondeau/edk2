@@ -14,7 +14,7 @@
 
     EXPORT  InternalMemCopyMem
     AREA    SetMem, CODE, READONLY
-    THUMB
+    AREA    THUMB
 
 InternalMemCopyMem
   stmfd  sp!, {r4-r11, lr}

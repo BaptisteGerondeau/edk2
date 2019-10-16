@@ -13,7 +13,8 @@
     EXPORT  InternalSyncIncrement
     EXPORT  InternalSyncDecrement
 
-    AREA   ArmSynchronization, CODE, READONLY
+    AREA   ArmSynchronization, READONLY
+    AREA   CODE, ARM
 
 /**
   Performs an atomic compare exchange operation on a 16-bit unsigned integer.

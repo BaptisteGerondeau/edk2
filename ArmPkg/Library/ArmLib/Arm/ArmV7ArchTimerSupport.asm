@@ -10,6 +10,8 @@
     INCLUDE AsmMacroExport.inc
     PRESERVE8
 
+    AREA    CODE, ARM
+
  RVCT_ASM_EXPORT ArmReadCntFrq
   mrc    p15, 0, r0, c14, c0, 0    ; Read CNTFRQ
   bx     lr

@@ -5,8 +5,6 @@
 ;
 
 
-AREA IoLibMmio, CODE, READONLY
-
 EXPORT MmioRead8Internal
 EXPORT MmioWrite8Internal
 EXPORT MmioRead16Internal
@@ -16,6 +14,9 @@ EXPORT MmioWrite32Internal
 EXPORT MmioRead64Internal
 EXPORT MmioWrite64Internal
 
+
+        AREA IoLibMmio, READONLY
+        AREA CODE, ARM
 ;
 ;  Reads an 8-bit MMIO register.
 ;

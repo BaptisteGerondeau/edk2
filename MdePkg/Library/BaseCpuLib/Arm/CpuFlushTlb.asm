@@ -9,7 +9,8 @@
 ;------------------------------------------------------------------------------
 
   EXPORT CpuFlushTlb
-  AREA cpu_flush_tlb, CODE, READONLY
+  AREA cpu_flush_tlb, READONLY
+  AREA CODE, ARM
 
 ;/**
 ;  Flushes all the Translation Lookaside Buffers(TLB) entries in a CPU.

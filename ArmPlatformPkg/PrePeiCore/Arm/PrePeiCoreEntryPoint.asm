@@ -17,7 +17,8 @@
   EXPORT  _ModuleEntryPoint
 
   PRESERVE8
-  AREA    PrePeiCoreEntryPoint, CODE, READONLY
+  AREA    PrePeiCoreEntryPoint, READONLY
+  AREA    CODE, ARM
 
 StartupAddr        DCD      CEntryPoint
 

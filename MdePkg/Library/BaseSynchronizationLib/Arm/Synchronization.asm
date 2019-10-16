@@ -81,6 +81,9 @@ InternalSyncCompareExchange16Fail
 //  IN      UINT32                    CompareValue,
 //  IN      UINT32                    ExchangeValue
 //  )
+
+    ALIGN 32
+
 InternalSyncCompareExchange32
   dmb
 
@@ -122,6 +125,9 @@ InternalSyncCompareExchange32Fail
 //  IN      UINT64                    CompareValue,   // r2-r3
 //  IN      UINT64                    ExchangeValue   // stack
 //  )
+
+    ALIGN 64
+
 InternalSyncCompareExchange64
   push    { r4-r7 }
   ldrd    r4, r5, [sp, #16]
@@ -163,6 +169,9 @@ InternalSyncCompareExchange64Fail
 //InternalSyncIncrement (
 //  IN      volatile UINT32           *Value
 //  )
+
+     ALIGN 1
+
 InternalSyncIncrement
   dmb
 TryInternalSyncIncrement

@@ -23,6 +23,9 @@
 ;  IN  UINT64   Dividend
 ;  )
 ;
+
+    ALIGN 64
+
 __rt_udiv64
   ; Swap r0-r1 and r2-r3
   mov     r12, r0

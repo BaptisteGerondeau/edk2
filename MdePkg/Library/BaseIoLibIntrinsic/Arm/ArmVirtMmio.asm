@@ -136,6 +136,9 @@ MmioRead64Internal
 ;  @param  Address The MMIO register to write.
 ;  @param  Value   The value to write to the MMIO register.
 ;
+
+    ALIGN 64
+
 MmioWrite64Internal
   dmb     st
   str     r2, [r0]

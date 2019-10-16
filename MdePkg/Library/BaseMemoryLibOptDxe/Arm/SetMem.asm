@@ -21,10 +21,12 @@ InternalMemSetMem16
     orr     r2, r2, r2, lsl #16
     b       B0
 
+	ALIGN 32
 InternalMemSetMem32
     lsl     r1, r1, #2
     b       B0
 
+	ALIGN 64
 InternalMemSetMem64
     lsl     r1, r1, #3
     b       B1

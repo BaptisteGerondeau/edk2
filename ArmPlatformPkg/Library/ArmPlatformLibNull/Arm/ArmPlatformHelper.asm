@@ -29,6 +29,7 @@ ArmPlatformPeiBootAction FUNCTION
 //ArmPlatformGetCorePosition (
 //  IN UINTN MpId
 //  );
+  ALIGN 32
 ArmPlatformGetCorePosition FUNCTION
   and   r1, r0, #ARM_CORE_MASK
   and   r0, r0, #ARM_CLUSTER_MASK

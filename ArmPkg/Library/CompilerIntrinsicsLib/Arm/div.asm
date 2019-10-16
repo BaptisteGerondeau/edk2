@@ -45,6 +45,8 @@ __aeabi_uidivmod
 ;  IN UINT32  Dividend
 ;  );
 ;
+
+    ALIGN 32
 __rt_udiv
     ; Swap R0 and R1
     MOV     r12, r0

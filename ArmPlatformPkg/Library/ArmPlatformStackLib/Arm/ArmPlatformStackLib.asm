@@ -20,7 +20,8 @@
   IMPORT  _gPcd_FixedAtBuild_PcdCoreCount
 
   PRESERVE8
-  AREA    ArmPlatformStackLib, CODE, READONLY
+  AREA    ArmPlatformStackLib, READONLY
+  AREA    CODE, ARM
 
 //VOID
 //ArmPlatformStackSet (

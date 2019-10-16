@@ -11,6 +11,8 @@
 
     INCLUDE AsmMacroExport.inc
 
+    AREA    CODE, ARM
+
  RVCT_ASM_EXPORT __ARM_switch8
   LDRB    r12,[lr,#-1]
   CMP      r3,r12

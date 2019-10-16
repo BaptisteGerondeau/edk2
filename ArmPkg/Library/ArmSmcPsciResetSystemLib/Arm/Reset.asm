@@ -12,6 +12,8 @@
 
   IMPORT ArmDisableMmu
 
+    AREA    CODE, ARM
+
 RVCT_ASM_EXPORT DisableMmuAndReenterPei
   push  {lr}
 

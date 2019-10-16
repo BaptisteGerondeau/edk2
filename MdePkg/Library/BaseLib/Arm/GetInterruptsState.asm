@@ -10,7 +10,8 @@
 
     EXPORT GetInterruptState
 
-    AREA Interrupt_enable, CODE, READONLY
+    AREA Interrupt_enable, READONLY
+    AREA CODE, ARM
 
 ;/**
 ;  Retrieves the current CPU interrupt state.

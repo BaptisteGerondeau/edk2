@@ -10,7 +10,8 @@
 
     EXPORT MemoryFence
 
-    AREA MemoryBarriers, CODE, READONLY
+    AREA MemoryBarriers, READONLY
+    AREA CODE, ARM
 
 ;/**
 ;  Used to serialize load and store operations.

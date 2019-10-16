@@ -12,6 +12,8 @@
 
     INCLUDE AsmMacroExport.inc
 
+    AREA    CODE, ARM
+
  RVCT_ASM_EXPORT ArmReadMidr
   mrc     p15,0,R0,c0,c0,0
   bx      LR
